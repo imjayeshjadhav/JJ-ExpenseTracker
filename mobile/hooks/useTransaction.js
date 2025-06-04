@@ -3,7 +3,7 @@
 import { useCallback, useState } from "react"
 import {Alert} from "react-native"
 
-const API_URL ="http://localhost:5002/api"
+const API_URL ="https://jj-expensetracker-1.onrender.com/api"
 
 export const useTransaction = (userId) =>{
     const [transactions, setTransactions] =  useState([])
@@ -20,7 +20,7 @@ export const useTransaction = (userId) =>{
     const fetchTransactions = useCallback (
         async () =>{
         try {
-            const response = await fetch (`${API_URL}/api/transactions/${userId}`)
+            const response = await fetch (`${API_URL}/transactions/${userId}`)
             const data = await response.json()
             setTransactions(data)
         } catch (error) {
@@ -31,7 +31,7 @@ export const useTransaction = (userId) =>{
     const fetchSummary = useCallback (
         async () =>{
         try {
-            const response = await fetch (`${API_URL}/api/transactions/summary/${userId}`)
+            const response = await fetch (`${API_URL}/transactions/summary/${userId}`)
             const data = await response.json()
             setSummary(data)
         } catch (error) {
