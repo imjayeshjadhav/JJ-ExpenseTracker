@@ -25,14 +25,14 @@ export default function Index() {
 
     const OnRefresh = async ()=>{
       setRefreshing(true)
-      await loadData
+      await loadData()
       setRefreshing(false)
     }
 
     const handleDelete =(id) =>{
       Alert.alert("Delete Transaction", "Are you sure want to delete this transaction?" ,[
       {text:"Cancel", style:"cancel"},
-      {text: "Delete", style:"destructive", Onpress:() => deleteTransaction(id)}
+      {text: "Delete", style:"destructive", onPress:() => deleteTransaction(id)}
     ])
     }
 

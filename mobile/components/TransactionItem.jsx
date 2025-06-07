@@ -8,7 +8,7 @@ const CATEGORY_ICONS ={
     "Food & Drinks":"fast-food",
     Shopping :"cart",
     Transportation :"car",
-    Entertainment:"Film",
+    Entertainment:"film",
     Bills :"receipt",
     Income :"cash",
     Other :"ellipsis-horizontal"
@@ -17,7 +17,7 @@ const CATEGORY_ICONS ={
 const TransactionItem = ({item, onDelete}) => {
 
     const isIncome = parseFloat(item.amount) >0;
-    const iconName = parseFloat(item.category) || "pricetag-outline"
+    const iconName = CATEGORY_ICONS[item.category] || "pricetag-outline";
 
   return (
     <View style={styles.transactionCard}>
@@ -31,7 +31,7 @@ const TransactionItem = ({item, onDelete}) => {
         </View>
         <View style={styles.transactionRight}>
             <Text style={[styles.transactionAmount, {color :isIncome ? COLORS.income : COLORS.expense}]}>
-                {isIncome ? "+" : "-"}Rs (Math.abs(parseFloat(item.amount)).toFixed(2))
+              {`${isIncome ? "+" : "-"}Rs ${Math.abs(parseFloat(item.amount)).toFixed(2)}`}
             </Text>
             <Text style={styles.transactionDate}>{formatDate(item.created_at)}</Text>
         </View>

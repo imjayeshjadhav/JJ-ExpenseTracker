@@ -2,8 +2,7 @@
 
 import { useCallback, useState } from "react"
 import {Alert} from "react-native"
-
-const API_URL ="https://jj-expensetracker-1.onrender.com/api"
+import { API_URL } from "../constants/api"
 
 export const useTransaction = (userId) =>{
     const [transactions, setTransactions] =  useState([])
@@ -61,6 +60,7 @@ export const useTransaction = (userId) =>{
 
             // Refresh data after deletion
             Alert.alert("Success","Transaction deleted successfully")
+            loadData()
         } catch (error) {
             console.log("Error deleting Transaction",error)
             Alert.alert("Error",error.message)
