@@ -43,25 +43,6 @@ A full-stack 💼 expense tracking application built with React Native and Node.
 • CORS enabled
 • Environment variable support
 
-📁 Mobile App Structure
-
-mobile/
-  app/      # 📱 Main application screens
-  assets/    # 🖼️ Static assets (images, styles)
-  components/  # 🧩 Reusable UI components
-  constants/   # 📐 Application constants
-  hooks/    # 🪝 Custom React hooks
-  lib/      # 🛠️ Utility functions
-
-📂 Backend Structure
-
-backend/
-  config/    # ⚙️ Database and app configuration
-  controllers/  # 📦 Route controllers
-  middleware/  # 🧱 Custom middleware
-  routes/    # 🛣️ API routes
-  server.js   # 🚀 Main entry point
-
 🚀 Getting Started
 
 🔧 Prerequisites
